@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retails Shop Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 60px 80px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: #2c5364;
+        }
+
+        p {
+            margin-bottom: 40px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 35px;
+            font-size: 16px;
+            border-radius: 30px;
+            transition: 0.3s ease;
+            color: white;
+            font-weight: 600;
+        }
+
+        .users-btn {
+            background: #007bff;
+        }
+
+        .users-btn:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .products-btn {
+            background: #28a745;
+        }
+
+        .products-btn:hover {
+            background: #1e7e34;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Retails Shop Online</h1>
+        <p>Select a service to continue</p>
+
+        <div class="button-container">
+            <a class="btn users-btn" 
+               href="http://lb-microservices-691668264.us-east-1.elb.amazonaws.com/users">
+               Users
+            </a>
+
+            <a class="btn products-btn" 
+               href="http://lb-microservices-691668264.us-east-1.elb.amazonaws.com/products">
+               Products
+            </a>
+        </div>
+    </div>
+</body>
+</html>

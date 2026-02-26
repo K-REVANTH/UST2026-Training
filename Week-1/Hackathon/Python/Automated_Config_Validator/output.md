@@ -1,0 +1,4 @@
+The config_validator.py script is a command line Python tool that validates configuration files in JSON, YAML, or INI format against a predefined schema. The schema defines required fields such as app_name, port, and database, along with their expected data types like string, integer, and boolean. When you run the script with a configuration file as an argument, it first checks whether the file exists.
+Based on the file extension, it loads the content using the appropriate parser: json for JSON files, yaml.safe_load for YAML files, and configparser for INI files. After loading, the configuration data is converted into a dictionary and validated against the schema using the jsonschema validate function
+
+If the structure and data types match the schema rules, the script prints VALIDATION SUCCESS and confirms the configuration is valid.

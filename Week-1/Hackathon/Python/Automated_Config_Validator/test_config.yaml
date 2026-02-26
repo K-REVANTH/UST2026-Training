@@ -1,0 +1,6 @@
+app_name: "RevanthApp"
+port: 8080
+debug: true
+database:
+  host: "localhost"
+  port: 5432
