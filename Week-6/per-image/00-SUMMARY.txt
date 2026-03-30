@@ -1,0 +1,19 @@
+════════════════════════════════════════════════════
+  MEDIMESH TRIVY SCAN SUMMARY
+  Date: Mon Mar 30 17:40:59 UTC 2026
+════════════════════════════════════════════════════
+
+IMAGE                            CRITICAL     HIGH    LINES
+──────────────────────────────────────────────────────
+medimesh-frontend                       0        0       66
+medimesh-bff                            0        0     2037
+medimesh-auth                           0        0     2151
+medimesh-user                           0        0     2199
+medimesh-doctor                         0        0     2199
+medimesh-appointment                    0        0     2145
+medimesh-vitals                         0        0     2145
+medimesh-pharmacy                       0        0     2145
+medimesh-ambulance                      0        0     2145
+medimesh-complaint                      0        0     2145
+medimesh-forum                          0        0     2145
+mongo                                   0        0      224
