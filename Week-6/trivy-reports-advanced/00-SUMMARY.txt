@@ -1,0 +1,14 @@
+IMAGE                            CRITICAL       HIGH     MEDIUM
+────────────────────────────────────────────────────────────
+medimesh-ambulance                      0          0          0
+medimesh-appointment                    0          0          0
+medimesh-auth                           0          0          0
+medimesh-bff                            0          0          0
+medimesh-complaint                      0          0          0
+medimesh-doctor                         0          0          0
+medimesh-forum                          0          0          0
+medimesh-frontend                       0          0          0
+medimesh-pharmacy                       0          0          0
+medimesh-user                           0          0          0
+medimesh-vitals                         0          0          0
+mongo                                   0          0          0

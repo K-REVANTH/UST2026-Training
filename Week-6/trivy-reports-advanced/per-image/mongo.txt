@@ -1,0 +1,283 @@
+2026-03-31T06:44:26Z	WARN	'--vuln-type' is deprecated. Use '--pkg-types' instead.
+2026-03-31T06:44:26Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-03-31T06:44:26Z	INFO	[misconfig] Misconfiguration scanning is enabled
+2026-03-31T06:44:26Z	INFO	[checks-client] Using existing checks from cache	path="/root/.cache/trivy/policy/content"
+2026-03-31T06:44:28Z	INFO	[secret] Secret scanning is enabled
+2026-03-31T06:44:28Z	INFO	[secret] If your scanning is slow, please try '--scanners vuln,misconfig' to disable secret scanning
+2026-03-31T06:44:28Z	INFO	[secret] Please see https://trivy.dev/docs/v0.69/guide/scanner/secret#recommendation for faster secret detection
+2026-03-31T06:44:41Z	INFO	Detected OS	family="ubuntu" version="22.04"
+2026-03-31T06:44:41Z	INFO	[ubuntu] Detecting vulnerabilities...	os_version="22.04" pkg_num=130
+2026-03-31T06:44:41Z	INFO	Number of language-specific files	num=10
+2026-03-31T06:44:41Z	INFO	[gobinary] Detecting vulnerabilities...
+2026-03-31T06:44:41Z	INFO	[node-pkg] Detecting vulnerabilities...
+2026-03-31T06:44:41Z	INFO	Detected config files	num=0
+2026-03-31T06:44:41Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.69/guide/scanner/vulnerability#severity-selection for details.
+2026-03-31T06:44:41Z	INFO	Table result includes only package filenames. Use '--format json' option to get the full path to the package file.
+
+Report Summary
+
+┌──────────────────────────┬──────────┬─────────────────┬─────────┬───────────────────┐
+│          Target          │   Type   │ Vulnerabilities │ Secrets │ Misconfigurations │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ mongo:7 (ubuntu 22.04)   │  ubuntu  │        6        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ opt/js-yaml/package.json │ node-pkg │        1        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/bin/bsondump         │ gobinary │        2        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/bin/mongodump        │ gobinary │        2        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/bin/mongoexport      │ gobinary │        2        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/bin/mongofiles       │ gobinary │        2        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/bin/mongoimport      │ gobinary │        2        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/bin/mongorestore     │ gobinary │        2        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/bin/mongostat        │ gobinary │        2        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/bin/mongotop         │ gobinary │        2        │    -    │         -         │
+├──────────────────────────┼──────────┼─────────────────┼─────────┼───────────────────┤
+│ usr/local/bin/gosu       │ gobinary │       18        │    -    │         -         │
+└──────────────────────────┴──────────┴─────────────────┴─────────┴───────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+mongo:7 (ubuntu 22.04)
+======================
+Total: 6 (MEDIUM: 6, HIGH: 0, CRITICAL: 0)
+
+┌────────────────────┬────────────────┬──────────┬──────────┬──────────────────────────────┬───────────────┬───────────────────────────────────────────────────────────┐
+│      Library       │ Vulnerability  │ Severity │  Status  │      Installed Version       │ Fixed Version │                           Title                           │
+├────────────────────┼────────────────┼──────────┼──────────┼──────────────────────────────┼───────────────┼───────────────────────────────────────────────────────────┤
+│ gpgv               │ CVE-2025-68972 │ MEDIUM   │ affected │ 2.2.27-3ubuntu2.5            │               │ gnupg: GnuPG: Signature bypass via form feed character in │
+│                    │                │          │          │                              │               │ signed messages                                           │
+│                    │                │          │          │                              │               │ https://avd.aquasec.com/nvd/cve-2025-68972                │
+├────────────────────┼────────────────┤          │          ├──────────────────────────────┼───────────────┼───────────────────────────────────────────────────────────┤
+│ libpam-modules     │ CVE-2025-8941  │          │          │ 1.4.0-11ubuntu2.6            │               │ linux-pam: Incomplete fix for CVE-2025-6020               │
+│                    │                │          │          │                              │               │ https://avd.aquasec.com/nvd/cve-2025-8941                 │
+├────────────────────┤                │          │          │                              ├───────────────┤                                                           │
+│ libpam-modules-bin │                │          │          │                              │               │                                                           │
+│                    │                │          │          │                              │               │                                                           │
+├────────────────────┤                │          │          │                              ├───────────────┤                                                           │
+│ libpam-runtime     │                │          │          │                              │               │                                                           │
+│                    │                │          │          │                              │               │                                                           │
+├────────────────────┤                │          │          │                              ├───────────────┤                                                           │
+│ libpam0g           │                │          │          │                              │               │                                                           │
+│                    │                │          │          │                              │               │                                                           │
+├────────────────────┼────────────────┤          │          ├──────────────────────────────┼───────────────┼───────────────────────────────────────────────────────────┤
+│ tar                │ CVE-2025-45582 │          │          │ 1.34+dfsg-1ubuntu0.1.22.04.2 │               │ tar: Tar path traversal                                   │
+│                    │                │          │          │                              │               │ https://avd.aquasec.com/nvd/cve-2025-45582                │
+└────────────────────┴────────────────┴──────────┴──────────┴──────────────────────────────┴───────────────┴───────────────────────────────────────────────────────────┘
+
+Node.js (node-pkg)
+==================
+Total: 1 (MEDIUM: 1, HIGH: 0, CRITICAL: 0)
+
+┌────────────────────────┬────────────────┬──────────┬────────┬───────────────────┬───────────────┬───────────────────────────────────────────────┐
+│        Library         │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version │                     Title                     │
+├────────────────────────┼────────────────┼──────────┼────────┼───────────────────┼───────────────┼───────────────────────────────────────────────┤
+│ js-yaml (package.json) │ CVE-2025-64718 │ MEDIUM   │ fixed  │ 3.13.1            │ 4.1.1, 3.14.2 │ js-yaml: js-yaml prototype pollution in merge │
+│                        │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2025-64718    │
+└────────────────────────┴────────────────┴──────────┴────────┴───────────────────┴───────────────┴───────────────────────────────────────────────┘
+
+usr/bin/bsondump (gobinary)
+===========================
+Total: 2 (MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2026-25679 │ HIGH     │ fixed  │ v1.25.7           │ 1.25.8, 1.26.1 │ net/url: Incorrect parsing of IPv6 host literals in net/url │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-25679                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │ MEDIUM   │        │                   │                │ html/template: URLs in meta content attribute actions are   │
+│         │                │          │        │                   │                │ not escaped in html/template...                             │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-27142                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/bin/mongodump (gobinary)
+============================
+Total: 2 (MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2026-25679 │ HIGH     │ fixed  │ v1.25.7           │ 1.25.8, 1.26.1 │ net/url: Incorrect parsing of IPv6 host literals in net/url │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-25679                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │ MEDIUM   │        │                   │                │ html/template: URLs in meta content attribute actions are   │
+│         │                │          │        │                   │                │ not escaped in html/template...                             │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-27142                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/bin/mongoexport (gobinary)
+==============================
+Total: 2 (MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2026-25679 │ HIGH     │ fixed  │ v1.25.7           │ 1.25.8, 1.26.1 │ net/url: Incorrect parsing of IPv6 host literals in net/url │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-25679                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │ MEDIUM   │        │                   │                │ html/template: URLs in meta content attribute actions are   │
+│         │                │          │        │                   │                │ not escaped in html/template...                             │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-27142                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/bin/mongofiles (gobinary)
+=============================
+Total: 2 (MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2026-25679 │ HIGH     │ fixed  │ v1.25.7           │ 1.25.8, 1.26.1 │ net/url: Incorrect parsing of IPv6 host literals in net/url │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-25679                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │ MEDIUM   │        │                   │                │ html/template: URLs in meta content attribute actions are   │
+│         │                │          │        │                   │                │ not escaped in html/template...                             │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-27142                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/bin/mongoimport (gobinary)
+==============================
+Total: 2 (MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2026-25679 │ HIGH     │ fixed  │ v1.25.7           │ 1.25.8, 1.26.1 │ net/url: Incorrect parsing of IPv6 host literals in net/url │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-25679                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │ MEDIUM   │        │                   │                │ html/template: URLs in meta content attribute actions are   │
+│         │                │          │        │                   │                │ not escaped in html/template...                             │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-27142                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/bin/mongorestore (gobinary)
+===============================
+Total: 2 (MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2026-25679 │ HIGH     │ fixed  │ v1.25.7           │ 1.25.8, 1.26.1 │ net/url: Incorrect parsing of IPv6 host literals in net/url │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-25679                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │ MEDIUM   │        │                   │                │ html/template: URLs in meta content attribute actions are   │
+│         │                │          │        │                   │                │ not escaped in html/template...                             │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-27142                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/bin/mongostat (gobinary)
+============================
+Total: 2 (MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2026-25679 │ HIGH     │ fixed  │ v1.25.7           │ 1.25.8, 1.26.1 │ net/url: Incorrect parsing of IPv6 host literals in net/url │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-25679                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │ MEDIUM   │        │                   │                │ html/template: URLs in meta content attribute actions are   │
+│         │                │          │        │                   │                │ not escaped in html/template...                             │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-27142                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/bin/mongotop (gobinary)
+===========================
+Total: 2 (MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2026-25679 │ HIGH     │ fixed  │ v1.25.7           │ 1.25.8, 1.26.1 │ net/url: Incorrect parsing of IPv6 host literals in net/url │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-25679                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │ MEDIUM   │        │                   │                │ html/template: URLs in meta content attribute actions are   │
+│         │                │          │        │                   │                │ not escaped in html/template...                             │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2026-27142                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/local/bin/gosu (gobinary)
+=============================
+Total: 18 (MEDIUM: 12, HIGH: 5, CRITICAL: 1)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │        Fixed Version         │                            Title                             │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2025-68121 │ CRITICAL │ fixed  │ v1.24.6           │ 1.24.13, 1.25.7, 1.26.0-rc.3 │ crypto/tls: Unexpected session resumption in crypto/tls      │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-68121                   │
+│         ├────────────────┼──────────┤        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-58183 │ HIGH     │        │                   │ 1.24.8, 1.25.2               │ golang: archive/tar: Unbounded allocation when parsing GNU   │
+│         │                │          │        │                   │                              │ sparse map                                                   │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-58183                   │
+│         ├────────────────┤          │        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-61726 │          │        │                   │ 1.24.12, 1.25.6              │ golang: net/url: Memory exhaustion in query parameter        │
+│         │                │          │        │                   │                              │ parsing in net/url                                           │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-61726                   │
+│         ├────────────────┤          │        │                   │                              ├──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-61728 │          │        │                   │                              │ golang: archive/zip: Excessive CPU consumption when building │
+│         │                │          │        │                   │                              │ archive index in archive/zip                                 │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-61728                   │
+│         ├────────────────┤          │        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-61729 │          │        │                   │ 1.24.11, 1.25.5              │ crypto/x509: golang: Denial of Service due to excessive      │
+│         │                │          │        │                   │                              │ resource consumption via crafted...                          │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-61729                   │
+│         ├────────────────┤          │        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-25679 │          │        │                   │ 1.25.8, 1.26.1               │ net/url: Incorrect parsing of IPv6 host literals in net/url  │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2026-25679                   │
+│         ├────────────────┼──────────┤        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-47912 │ MEDIUM   │        │                   │ 1.24.8, 1.25.2               │ net/url: Insufficient validation of bracketed IPv6 hostnames │
+│         │                │          │        │                   │                              │ in net/url                                                   │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-47912                   │
+│         ├────────────────┤          │        │                   │                              ├──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-58185 │          │        │                   │                              │ encoding/asn1: Parsing DER payload can cause memory          │
+│         │                │          │        │                   │                              │ exhaustion in encoding/asn1                                  │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-58185                   │
+│         ├────────────────┤          │        │                   │                              ├──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-58186 │          │        │                   │                              │ golang.org/net/http: Lack of limit when parsing cookies can  │
+│         │                │          │        │                   │                              │ cause memory exhaustion in...                                │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-58186                   │
+│         ├────────────────┤          │        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-58187 │          │        │                   │ 1.24.9, 1.25.3               │ crypto/x509: Quadratic complexity when checking name         │
+│         │                │          │        │                   │                              │ constraints in crypto/x509                                   │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-58187                   │
+│         ├────────────────┤          │        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-58188 │          │        │                   │ 1.24.8, 1.25.2               │ crypto/x509: golang: Panic when validating certificates with │
+│         │                │          │        │                   │                              │ DSA public keys in crypto/x509...                            │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-58188                   │
+│         ├────────────────┤          │        │                   │                              ├──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-58189 │          │        │                   │                              │ crypto/tls: go crypto/tls ALPN negotiation error contains    │
+│         │                │          │        │                   │                              │ attacker controlled information                              │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-58189                   │
+│         ├────────────────┤          │        │                   │                              ├──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-61723 │          │        │                   │                              │ encoding/pem: Quadratic complexity when parsing some invalid │
+│         │                │          │        │                   │                              │ inputs in encoding/pem                                       │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-61723                   │
+│         ├────────────────┤          │        │                   │                              ├──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-61724 │          │        │                   │                              │ net/textproto: Excessive CPU consumption in                  │
+│         │                │          │        │                   │                              │ Reader.ReadResponse in net/textproto                         │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-61724                   │
+│         ├────────────────┤          │        │                   │                              ├──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-61725 │          │        │                   │                              │ net/mail: Excessive CPU consumption in ParseAddress in       │
+│         │                │          │        │                   │                              │ net/mail                                                     │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-61725                   │
+│         ├────────────────┤          │        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-61727 │          │        │                   │ 1.24.11, 1.25.5              │ golang: crypto/x509: excluded subdomain constraint does not  │
+│         │                │          │        │                   │                              │ restrict wildcard SANs                                       │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-61727                   │
+│         ├────────────────┤          │        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-61730 │          │        │                   │ 1.24.12, 1.25.6              │ During the TLS 1.3 handshake if multiple messages are sent   │
+│         │                │          │        │                   │                              │ in records...                                                │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2025-61730                   │
+│         ├────────────────┤          │        │                   ├──────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-27142 │          │        │                   │ 1.25.8, 1.26.1               │ html/template: URLs in meta content attribute actions are    │
+│         │                │          │        │                   │                              │ not escaped in html/template...                              │
+│         │                │          │        │                   │                              │ https://avd.aquasec.com/nvd/cve-2026-27142                   │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────┴──────────────────────────────────────────────────────────────┘
